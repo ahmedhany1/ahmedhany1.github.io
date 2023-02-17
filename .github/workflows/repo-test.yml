@@ -1,0 +1,9 @@
+name: Interact with repo
+run-name: repo-test
+on: push
+jobs:
+  list-repo-contents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ls -al
