@@ -1,9 +1,8 @@
-name: Interact with repo
-run-name: repo-test
+name: Custom shellcheck
 on: push
 jobs:
   list-repo-contents:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: shellcheck *.sh
+      - run: find . -iname '*.sh' -execdir shellcheck {} +
