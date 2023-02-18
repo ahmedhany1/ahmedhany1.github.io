@@ -1,0 +1,11 @@
+name: writingcheck
+description: Checks English text for mistakes
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-node@v3
+    - run: npm install -g write-good
+      shell: bash
+    - run: find . -iname '*.md' -execdir write-good {} +
+      shell: bash
+
